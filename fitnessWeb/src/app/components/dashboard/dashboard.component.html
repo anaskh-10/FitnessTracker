@@ -1,0 +1,66 @@
+<div class="dashboard-container">
+    <div class="stats-row" nz-row [nzGutter]="[24, 24]">
+      <div nz-col [nzXs]="{ span: 8, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+        <nz-card nzTitle="Total Calories Burned" style="background-color: aliceblue;">
+          <div class="stat-content">
+            <p>{{statsData?.totalCaloriesBurned}} cal</p>
+          </div>
+        </nz-card>
+      </div>
+      <div nz-col [nzXs]="{ span: 11, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+        <nz-card nzTitle="Total Distance Covered" style="background-color: aliceblue;">
+          <div class="stat-content">
+            <p>{{statsData?.distance | number: '1.1-1'}} Km</p>
+          </div>
+        </nz-card>
+      </div>
+      <div nz-col [nzXs]="{ span: 8, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+        <nz-card nzTitle="Total Steps Taken" style="background-color: aliceblue;">
+          <div class="stat-content">
+            <p>{{statsData?.steps}}</p>
+          </div>
+        </nz-card>
+      </div>
+    </div>
+  
+    <div class="stats-row" nz-row [nzGutter]="[24, 24]" style="margin-top: 24px;">
+      <div nz-col [nzXs]="{ span: 8, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+        <nz-card nzTitle="Total Time Spent" style="background-color: aliceblue;">
+          <div class="stat-content">
+            <p>{{statsData?.duration}} min</p>
+          </div>
+        </nz-card>
+      </div>
+      <div nz-col [nzXs]="{ span: 8, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+        <nz-card nzTitle="Achieved Goals" style="background-color: aliceblue;">
+          <div class="stat-content">
+            <p>{{statsData?.achievedGoals}}</p>
+          </div>
+        </nz-card>
+      </div>
+      <div nz-col [nzXs]="{ span: 8, offset: 1 }" [nzLg]="{ span: 6, offset: 2 }">
+        <nz-card nzTitle="Not Achieved Goals" style="background-color: aliceblue;">
+          <div class="stat-content">
+            <p>{{statsData.notAchievedGoals}}</p>
+          </div>
+        </nz-card>
+      </div>
+    </div>
+  
+    <div nz-row [nzGutter]="[24, 24]" class="chart-row">
+      <div nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12">
+        <nz-card nzTitle="Recent Workouts">
+          <div class="chart-container">
+            <canvas #workoutLineChart width="700" height="300"></canvas>
+          </div>
+        </nz-card>
+      </div>
+      <div nz-col nzXs="24" nzSm="24" nzMd="12" nzLg="12">
+        <nz-card nzTitle="Recent Activities">
+          <div class="chart-container">
+            <canvas #activityLineChart width="700" height="300"></canvas>
+          </div>
+        </nz-card>
+      </div>
+    </div>
+  </div>

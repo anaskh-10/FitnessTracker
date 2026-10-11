@@ -1,0 +1,59 @@
+<div>
+    <div nz-row>
+        <h1 nz-card-grid [ngStyle]="gridStyle">Workout</h1>
+    </div>
+
+    <div nz-row>
+        <div nz-col nzFlex="2">
+            <nz-card nzType="inner" style="margin-top:16px;" nzTitle="Post New Workout">
+                <form nz-form [formGroup]="workoutForm" class="custom-form" (ngSubmit)="submitForm()">
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input the calories!">
+                            <input type="number" nz-input formControlName="caloriesBurned"
+                                placeholder="Enter the calories you burned" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input the duration!">
+                            <input type="number" nz-input formControlName="duration"
+                                placeholder="Enter the duration" />
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item nzErrorTip="Please input the type!">
+                        <nz-form-control >
+                            <nz-select nzAllowClear nzPlaceHolder="Select the type"formControlName="type"> 
+                                <nz-option *ngFor="let type of listOfType"[nzLabel]="type"[nzValue]="type"></nz-option>
+                            </nz-select>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <nz-form-item>
+                        <nz-form-control nzErrorTip="Please input the date!">
+                            <nz-date-picker style="width: 100%;" formControlName="date"></nz-date-picker>
+                        </nz-form-control>
+                    </nz-form-item>
+                    <button nz-button nzType="primary" nzBlock class="w-100" [disabled]="workoutForm.invalid">
+                        Post New Workout
+                    </button>
+                </form>
+            </nz-card>
+        </div>
+        <div nz-col nzFlex="3" style="margin-left: 20px;">
+            <nz-card nzType="inner" style="margin-top: 16px;" nzTitle="Past Workouts">
+                <div nz-card-grid style="width: 100%;" *ngFor="let workout of workouts">
+                    <div>
+                        Calories Burned: <strong>{{workout.caloriesBurned}} cal</strong>
+                        -
+                        duration: <strong>{{workout.duration}} min</strong>
+                        -
+                        Date: <strong>{{workout.date | date}}</strong>
+                        -
+                        type: <strong>{{workout.type}}</strong>
+                        <button nz-button nzDanger nzSize="small" (click)="deleteWorkout(workout.id)">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </nz-card>
+        </div>
+    </div>
+</div>

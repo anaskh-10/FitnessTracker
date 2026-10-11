@@ -1,0 +1,35 @@
+<div class="center-form">
+    <img src="https://cdn-icons-png.flaticon.com/512/5087/5087579.png" alt="Logo">
+    <h2 class="title">Fitness Tracker</h2>
+    <h4>Welcome to our website. We hope you achieve your fitness goals!</h4>
+    
+    <p class="description">
+        <i nz-icon nzType="check-circle" nzTheme="outline"></i> Track workouts<br>
+        <i nz-icon nzType="bar-chart" nzTheme="outline"></i> Monitor progress<br>
+        <i nz-icon nzType="heart" nzTheme="outline"></i> Stay motivated
+      </p>
+
+    <form nz-form [formGroup]="loginForm" (ngSubmit)="submitForm()" class="custom-form">
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your username!">
+          <nz-input-group nzPrefixIcon="user">
+            <input type="username" nz-input formControlName="username" placeholder="Enter your username" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <nz-form-item>
+        <nz-form-control nzErrorTip="Please input your password!">
+          <nz-input-group nzPrefixIcon="lock">
+            <input type="password" nz-input formControlName="password" placeholder="Enter your password" />
+          </nz-input-group>
+        </nz-form-control>
+      </nz-form-item>
+      <button nz-button nzType="primary" nzBlock [disabled]="loginForm.invalid" class="w-100">
+        Login
+      </button>
+      <div class="link">
+        <a routerLink="/register">Don't have an account? Register here.</a>
+      </div>
+    </form>
+  </div>
+  

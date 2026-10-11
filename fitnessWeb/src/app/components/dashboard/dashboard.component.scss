@@ -1,0 +1,59 @@
+/* dashboard.component.scss */
+.dashboard-container {
+    padding: 24px;
+  }
+  
+  .ant-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 24px;
+  }
+  
+  .ant-card-head-title {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .ant-card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    padding: 12px;
+  }
+  
+  .stat-content {
+    text-align: center;
+  }
+  
+  .chart-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .chart-container canvas {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Media query for smaller screens */
+  @media (max-width: 768px) {
+    .ant-card-body {
+      min-height: auto;
+    }
+  
+    .chart-container canvas {
+      height: 300px;
+    }
+  }
+  
+  .stats-row {
+      display: flex;
+      justify-content: center; /* Center the stats rows */
+      margin-left: 0 !important; /* Override inline margin-left */
+      margin-right: 0 !important;
+  }

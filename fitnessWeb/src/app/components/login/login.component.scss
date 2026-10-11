@@ -1,0 +1,55 @@
+.center-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 70vh;
+  background-color: #ffffff; 
+  padding: 20px;
+
+  .description {
+    font-size: 1rem;
+    color: #4a90e2; /* Updated description text color */
+    margin-bottom: 20px;
+    max-width: 300px;
+  }
+
+  img {
+    width: 100px; /* Adjust logo size as needed */
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+    color: #010a12; /* Updated title color */
+    margin-bottom: 20px;
+  }
+
+  .custom-form {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .w-100 {
+    width: 100%;
+  }
+
+  .link {
+    text-align: center;
+    margin-top: 15px;
+
+    a {
+      color: #3380cc; /* Updated link color */
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
